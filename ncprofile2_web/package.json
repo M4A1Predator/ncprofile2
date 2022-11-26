@@ -1,0 +1,65 @@
+{
+  "name": "ncprofile2_web",
+  "version": "1.0.0",
+  "description": "",
+  "export": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/server/server.js",
+    "transpile": "npx babel ./src --out-dir dist/server",
+    "cpStatic": "npx cpx ./src/public/**/* dist/public",
+    "clean": "npx rimraf dist/server",
+    "build": "npm run clean && npm run transpile",
+    "server": "node ./dist/server/server.js",
+    "dev": "npm run build && npm run server DEV",
+    "watch:dev": "nodemon",
+    "webpack": "npx webpack -c ./webpack.config.js"
+  },
+  "nodemonConfig": {
+    "exec": "node src/server.js DEV",
+    "watch": [
+      "src/*",
+      "public/*"
+    ],
+    "ignore": [
+      "**/__tests__/**",
+      "*.test.js",
+      "*.spec.js"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.13",
+    "@babel/plugin-transform-runtime": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "@babel/runtime": "^7.18.9",
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "express-session": "^1.17.3",
+    "helmet": "^5.1.1",
+    "jsonschema": "^1.4.1",
+    "jsonwebtoken": "^8.5.1",
+    "lowdb": "^3.0.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.19",
+    "regenerator-runtime": "^0.13.9",
+    "rimraf": "^3.0.2",
+    "winston": "^3.8.1"
+  },
+  "devDependencies": {
+    "babel-loader": "^8.2.5",
+    "concurrently": "^7.3.0",
+    "cpx": "^1.5.0",
+    "eslint": "^8.22.0",
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "npm-run-all": "^4.1.5",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}

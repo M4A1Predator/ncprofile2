@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "createdAt": 1667721813715
+  },
+  "admin": {
+    "username": "admin",
+    "password": "0356fa05b81f0396f8a0f11a7add5134c753f6f9166269941510e68aca776b25563dc37bbd6363d959e597aae3efe8f980069ac04b1f43bc8361d1105556ecec",
+    "salt": "45891cb8e7b5d7a1fb1a1af4c4f61ce0"
+  },
+  "info": {
+    "webName": "zxc"
+  },
+  "fields": [
+    {
+      "key": "NavbarItems",
+      "type": "JSON",
+      "data": [
+        {
+          "name": "Home",
+          "url": "/"
+        },
+        {
+          "name": "Services",
+          "url": "/services"
+        },
+        {
+          "name": "About",
+          "url": "/about"
+        }
+      ]
+    },
+    {
+      "name": "ContactEmail",
+      "type": "TEXT",
+      "data": "hello@cod.com"
+    }
+  ]
+}
