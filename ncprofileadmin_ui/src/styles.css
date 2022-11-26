@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*
+#222831
+#393E46
+#FFD369
+#EEEEEE
+*/
+
+.wrapper {
+  height: 100vh;
+}
+
+.inner-wrapper {
+  display: flex;
+  align-items: stretch;
+  min-height: calc(100% - 50px);
+}
+
+.sidebar {
+  background-color: #393E46;
+  min-width: 250px;
+  max-width: 250px;
+  height: 100%;
+  flex: 1;
+  color: #EEEEEE;
+}
+
+.sidebar.active {
+  margin-left: -250px;
+}
+
+.footer {
+  background-color: #000000;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  position:fixed;
+  bottom:0;
+  width:100%;
+}

@@ -1,0 +1,6 @@
+<ng-container *ngIf="isReady; else loading">
+  <ng-content></ng-content>
+</ng-container>
+<ng-template #loading>
+  Loading...
+</ng-template>

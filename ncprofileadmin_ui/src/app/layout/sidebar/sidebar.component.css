@@ -1,0 +1,15 @@
+.list-unstyled > li {
+  font-size: 1.25em;
+  height: 32px;
+  padding: 0 36px;
+}
+
+.list-unstyled > li > a {
+  text-decoration: none;
+  color: #EEEEEE
+}
+
+.sidebar-header {
+  text-align: center;
+  padding: 18px auto;
+}
