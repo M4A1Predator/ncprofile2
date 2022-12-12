@@ -1,12 +1,13 @@
 import express from 'express'
 import ContainerFactory from '../../container.js'
 import AuthError from '../../models/errors/auth-error.js'
+import { requireAuth } from '../auth-middleware.js'
 
 const authRouter = express.Router()
 const container = ContainerFactory.instance()
 
-authRouter.get('/verify', (req, res) => {
-  res.send('ok')
+authRouter.get('/verify', requireAuth, (req, res) => {
+  res.send({ message: 'ok' })
 })
 
 authRouter.post('/token', async (req, res, next) => {

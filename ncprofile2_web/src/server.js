@@ -3,6 +3,7 @@ import helmet from 'helmet'
 import morgan from 'morgan'
 import bodyParser from 'body-parser'
 import setAppRouter from './routes/router.js'
+import cors from 'cors'
 
 import init from './initializr.js'
 
@@ -23,6 +24,12 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
+
+// parse text/html
+app.use(bodyParser.text({ type: "text/html" }))
+
+// CORS
+app.use(cors())
 
 // routes
 setAppRouter(app)

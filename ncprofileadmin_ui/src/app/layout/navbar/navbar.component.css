@@ -7,3 +7,10 @@
   padding: 0;
   margin: 0 18px
 }
+
+.navbar-text-link {
+  color: #EEEEEE;
+  padding: 0;
+  margin: 0 18px;
+  cursor: pointer;
+}

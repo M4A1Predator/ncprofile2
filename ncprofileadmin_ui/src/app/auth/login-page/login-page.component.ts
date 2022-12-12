@@ -16,6 +16,8 @@ export class LoginPageComponent implements OnInit {
     password: new FormControl('')
   })
 
+  errorMessage = ""
+
   constructor(private authService: AuthService,
               private router: Router) { }
 
@@ -27,8 +29,14 @@ export class LoginPageComponent implements OnInit {
     if (!loginCred.password || !loginCred.password) {
       return
     }
-    this.authService.login(loginCred).subscribe(res => {
-      this.router.navigate(['/'])
+    this.authService.login(loginCred).subscribe({
+      next: res => {
+        this.router.navigate(['/'])
+      },
+      error: err => {
+        console.error(err)
+        this.errorMessage = "Can't login"
+      }
     })
   }
 }

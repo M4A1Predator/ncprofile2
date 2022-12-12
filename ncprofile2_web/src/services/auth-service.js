@@ -45,6 +45,7 @@ export default class AuthService {
 
     const privateKey = await this._readPrivateKey()
     const token = jwt.sign({"name":"admin"}, privateKey, { algorithm: 'RS256', expiresIn: "7d"})
+    this._logger.info(`Generated token for ${user.username}`)
     return token
   }
 
